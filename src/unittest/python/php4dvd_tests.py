@@ -6,10 +6,11 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest
+from get_driver import get_driver
 
 class TestLoginAddDvdRmDvdLogout(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = get_driver(capa = {'platform': 'LINUX', 'browserName': 'firefox', 'version': '', 'javascriptEnabled': True}) #, grid_url="http://192.168.2.2:4444/wd/hub")
         self.driver.implicitly_wait(30)
         self.base_url = "http://localhost/"
         self.verificationErrors = []
